@@ -1,0 +1,55 @@
+1 - Instalar o selenium (pip install selenium)
+
+2 - webdriver (from selenium import webdriver)
+from selenium.webdriver.chrome.options import Options
+
+options = Options()
+
+options.add_argument('--headless')\\ocutar navegador
+
+options.add_argument('windows-size=400,800') \\definir resolução 
+navegador = webdriver.Chrome(options=options) \\definir resolução
+
+3 - importar a bibliotec sleep (from time import sleep)
+
+sleep(3)
+
+4 - importar o BeautifulSoup (from bs4 import BeautifulSoup)
+
+exemplo de uso, convertendo uma pagina para BeautifulSoup:
+converter a pagina em um objeto do BeautifulSoup
+
+page_content = navegador.page_source
+site = BeautifulSoup(page_content, 'html.parser')
+print(site.prettify())
+
+extraindo dados com BeautifulSoup
+exemplo
+hospedagem = site.find('meta', attrs={'itemprop':'name'})
+                       nome da tag 'meta'  nome do atributo'itemprop':'name'             
+
+
+Recuperando campos no selenium
+exemplo:
+
+input_place = navegador.find_element_by_tag_name('input')
+
+input_place.send_keys('data')
+input_place.submit()
+
+Encontrar um elemento que tem mais de uma na mesma tela
+
+button_stay = navegador.find_element_by_css_selector('button > img ')
+button_stay.click()
+
+acessar um button que está no fim da pagina utilizando notação de lista do pthon
+
+nextButton = navegador.find_elements_by_tag_name('button')[-1]
+nextButton.click()
+
+outro exemplo com uma lista de button com uma tag svg
+
+button_stay = navegador.find_elements('button svg')
+
+
+
