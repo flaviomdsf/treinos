@@ -23,13 +23,16 @@ const pokemonList = document.getElementById('pokemonList')
 //Usando arrow function
 
     pokeApi.getPokemons().then((pokemons) => {
-        const listItems = []
+        
+       pokemonList.innerHTML += pokemons.map(convertPokemonToLi).join('')
+        
+        /*const listItems = []
 
         for (let i = 0; i < pokemons.length; i++){
             const pokemon = pokemons[i];
             listItems.push(convertPokemonToLi(pokemon))
         }
-        console.log(listItems)
+        console.log(listItems)*/
     })
 
 /*
