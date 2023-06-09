@@ -1,0 +1,11 @@
+/*
+Theme Name: WP Devs Child
+Template: wp-devs
+Version: 1.0
+*/
+
+.top-bar {
+    background: red;
+    color: #000000;
+    padding: 15px 0;
+}

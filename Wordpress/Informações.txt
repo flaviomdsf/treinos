@@ -1,0 +1,11 @@
+Ligando o modo DEBUG do WordPress:
+	No Arquivo wp-config.php adiciono a linha de código:
+	// Habilita modo de debug
+	define('WP_DEBUG', true);
+
+	// Guarda os logs em /wp-content/debug.log
+	define('WP_DEBUG_LOG', true);
+	
+	O arquivo fica em wp-content/debug.log
+	
+	
